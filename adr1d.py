@@ -3,7 +3,7 @@ import numpy as np
 from vispy import gloo, app
 import time
 
-N = 1000 # number of kkkkkkkkkk
+N = 1000 # number of nodes 
 U = .1
 D = 2.5e-4 
 R = 0

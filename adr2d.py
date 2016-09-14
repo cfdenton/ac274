@@ -2,46 +2,47 @@ import sys
 import numpy as np
 from vispy import gloo, app
 import time
+import argparse
 
-
-# sample texture
-radius = 32
-im1 = np.random.normal(
-    0.8, 0.3, (radius * 2 + 1, radius * 2 + 1)).astype(np.float32)
-
-# mask to disk
-L = np.linspace(-radius, radius, 2*radius + 1)
-(X, Y) = np.meshgrid(L, L)
-im1 *= np.array((X ** 2 + Y ** 2) <= radius ** 2, dypte='float32')
 
 # number of nodes per dimension (N^2 total)
-N = 5 
 
 vertex_shader = """
 attribute vec2 position;
+attribute vec2 texcoord;
+varying vec2 v_texcoord;
 void main() {
     gl_Position = vec4(position, 0.0, 1.0);
+    v_texcoord = texcoord; 
 }
 """
 
 fragment_shader = """
+uniform sampler2D texture;
+varying vec2 v_texcoord;
 void main() {
-    gl_FragColor = (1.0, 0, 0, 1.0);
+    float v;
+    v = texture2D(texture, v_texcoord).r;
+    gl_FragColor = vec4(1.0-v, 1.0-v, 1.0-v, 1.0);
 }
 """
 
 class Canvas(app.Canvas):
-    def __init__(self):
+    def __init__(self, state, transfer):
         app.Canvas.__init__(self, title='Advection-Diffusion-Reaction 2D',
                             size=(512, 512), keys='interactive')
         
-        x = np.linspace(-1.0, +1.0, N)
-        y = np.linspace(-1.0, +1.0, N)
-        xc, yc = np.meshgrid(x, y) 
+        # make grid
         self._program = gloo.Program(vertex_shader, fragment_shader)
-        vert = np.c_[np.matrix.flatten(xc), np.matrix.flatten(yc)].astype(np.float32)
-        print(vert)
-        self._program["position"] = vert
+        self._timer = app.Timer('auto', connect=self.update, start=True)
+        
+        self.state = state
+        self.transport = transfer
+        #print(state.size)
+
+        self._program["position"] = [(-1, -1), (-1, +1), (+1, -1), (+1, +1)]
+        self._program["texcoord"] = [(0, 0), (0, 1), (1, 0), (1, 1)]
+        self._program["texture"] = self.vec_to_tex(self.state)
         self.show()
 
     
@@ -51,14 +52,105 @@ class Canvas(app.Canvas):
 
         
     def on_draw(self, event):
-        gloo.clear((1, 1, 1, 1))
-        gloo.set_viewport(0, 0, *self.physical_size)
-        self._program.draw('triangle_fan')
         # draw canvas
+        gloo.clear('white')
+        gloo.set_viewport(0, 0, *self.physical_size)
+    
+        #print(self.state)
+
+        self.state = next_state(self.state, self.transport)
+        self._program["texture"] = self.vec_to_tex(self.state) 
+
+        #print(self.state)
+        self._program["texture"].interpolation = 'linear'
+
+        self._program.draw('triangle_strip')
+
+
+    def vec_to_tex(self, state):
+        tex = np.resize(state, (N, N, 1))
+        tex = np.repeat(tex, 4, 2)
+        tex[:, :, 3].fill(1)
+        return tex
+
+
+def next_state(state, transport):
+    return np.matmul(transport, state)
+    
+
+# initial circle
+def make_initial():
+    L = np.linspace(-1.0, 1.0, N)
+    (x, y) = np.meshgrid(L, L)
+    state = .5 * np.array((x ** 2 + y ** 2) <= radius * radius, dtype=np.float32)
+    state = state.flatten()
+    return state
+
+def make_transport():
+    transport = np.zeros((N*N, N*N), dtype=np.float32) 
+    for i in range(N*N):
+        transport[i][i] = 1 - 4*D*dt/(d*d) + R*dt
+        # right 
+        transport[i][(i-1)%(N*N)] = D*dt/(d*d) - Ux*dt/(2*d)
+        # left 
+        transport[i][(i+1)%(N*N)] = D*dt/(d*d) + Ux*dt/(2*d)
+        # up
+        transport[i][(i+N)%(N*N)] = D*dt/(d*d) - Uy*dt/(2*d)
+        # down
+        transport[i][(i-N)%(N*N)] = D*dt/(d*d) + Uy*dt/(2*d)
+    return transport
+      
 
 
 def main(arguments):
-    c = Canvas()
+    parser = argparse.ArgumentParser(description='parameters')
+    parser.add_argument('-N', type=int, default='100')
+    parser.add_argument('-D', type=float, default='.1')
+    parser.add_argument('-Ux', type=float, default='0')
+    parser.add_argument('-Uy', type=float, default='0')
+    parser.add_argument('-R', type=float, default='0')
+    parser.add_argument('-radius', type=float, default='.2')
+    parser.add_argument('-dt', type=float, default='1')
+    parser.add_argument('-d', type=float, default='1')
+    args = parser.parse_args()
+    global N, D, Ux, Uy, R, radius, dt, d
+    N = args.N
+    D = args.D
+    Ux = args.Ux
+    Uy = args.Uy
+    R = args.R
+    radius = args.radius
+    dt = args.dt
+    d = args.d
+
+    delta = D*dt/(d*d)
+    alphaX = Ux*dt/d
+    alphaY = Uy*dt/d
+    rho = R*dt
+
+    state = make_initial()
+    transfer = make_transport()
+     
+    print("delta: " + str(delta))
+    print("alpha_x: " + str(alphaX))
+    print("alpha_y: " + str(alphaY))
+    print("rho: " + str(rho))
+    print("delta = Dh/d2 < 1/2 for stability")
+    print("alpha_j = U_j h/d < 2delta < 1 for stability")
+    print("rho = Rh < 2delta")
+    print("") 
+    print("parameters:")
+    print("N: " + str(N))
+    print("D: " + str(D))
+    print("Ux: " + str(Ux))
+    print("Uy: " + str(Uy))
+    print("R: " + str(R))
+    print("radius: " + str(radius))
+    print("h: " + str(dt))
+    print("d: " + str(d))
+    
+
+    c = Canvas(state, transfer)
     app.run()
 
 
