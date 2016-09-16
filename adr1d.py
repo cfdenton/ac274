@@ -4,7 +4,7 @@ from vispy import gloo, app
 import time
 
 N = 1000 # number of nodes 
-U = .1
+U = 0.1 
 D = 2.5e-4 
 R = 0
 dx = 1e-3
@@ -13,14 +13,25 @@ delta = D*dt/(dx * dx)
 alpha = U*dt/dx
 rho = R*dt
 
+mass = []
+average_pos = []
+variance = []
+entropy = []
+
 def main(arguments):
     print("delta: " + str(delta))
     print("alpha: " + str(alpha))
     print("rho: " + str(rho))
     print("delta = Dh/d^2 < 1/2 for stability")
     print("alpha = Uh/d < 2delta < 1 for stability")
-    c = Canvas()
-    app.run()
+    try: 
+        c = Canvas()
+        app.run()
+    finally:
+        output_val(mass, 'mass1d.csv')
+        output_val(average_pos, 'avepos1d.csv')
+        output_val(variance, 'variance1d.csv')
+        output_val(entropy, 'entropy1d.csv')
     
 
 def make_transport():
@@ -30,6 +41,31 @@ def make_transport():
         transport[i][i] = 1 - 2*D*dt/(dx * dx) + R*dt
         transport[i][(i+1) % N] = dt*(D/(dx*dx) + U/(2*dx))
     return transport
+
+def compute_mass(state):
+    return np.sum(state)
+
+def compute_ave_pos(state):
+    return np.sum(state*np.linspace(-1.0, +1.0, state.size))
+
+def compute_var(state):
+    x = np.linspace(-1.0, +1.0, state.size)
+    ave = np.sum(state*x)
+    return np.sum(state*x*x) - ave*ave
+
+def compute_entropy(state):
+    return -np.sum(state*state)
+
+def update_diag(state):
+    mass.append(compute_mass(state))
+    average_pos.append(compute_ave_pos(state))
+    variance.append(compute_var(state))
+    entropy.append(compute_entropy(state))
+
+def output_val(values, filename):
+    with open(filename, 'w') as f:
+        for i in values:
+            f.write(str(i) + '\n')
 
 
 VERT_SHADER = """
@@ -47,7 +83,6 @@ void main(void) {
 
 
 class Canvas(app.Canvas):
-    
     def __init__(self):
         app.Canvas.__init__(self, keys='interactive', size=(800, 600))
 
@@ -86,42 +121,8 @@ class Canvas(app.Canvas):
 
     def _next_state(self):      
         self.state = np.matmul(self.transport, self.state)
-        #print(self.state)
+        update_diag(self.state)
     
-
-'''
-   c = app.Canvas(keys='interactive')
-   vertex = """
-   attribute vec2 a_position;
-   void main(void)
-   {
-      gl_Position = vec4(a_position, 0.0, 1.0);
-   }
-   """
-   fragment = """
-   void main(void)
-   {
-      gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-   }
-   """
-   program = gloo.Program(vertex, fragment)
-   program['a_position'] = np.c_[
-         np.linspace(-1.0, +1.0, 1000),
-         np.random.uniform(-0.5, +0.5, 1000)].astype(np.float32)
-   print(program['a_position'])
-
-   @c.connect
-   def on_resize(event):
-      gloo.set_viewport(0, 0, *event.size)
-
-   @c.connect
-   def on_draw(event):
-      gloo.clear((1, 1, 1, 1))
-      program.draw('line_strip')
-
-   c.show()
-   app.run();
-'''
 
 if __name__ == '__main__':
    sys.exit(main(sys.argv[1:]))

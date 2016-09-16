@@ -4,42 +4,6 @@ from vispy import gloo, app
 import time
 import argparse
 
-# initial circle
-def make_initial():
-    L = np.linspace(-1.0, 1.0, N)
-    (x, y) = np.meshgrid(L, L)
-    #state = np.exp(np.array(-x ** 2 - y**2)).astype(np.float32)
-    #state = .5 * np.array((x ** 2 + y ** 2) <= radius * radius, dtype=np.float32)
-    state = np.random.uniform(0.0, 0.01, (N*N)).astype(np.float32) 
-    #state = state * np.array((x ** 2 + y ** 2) <= radius * radius, dtype=np.float32).flatten()
-    #state = state.flatten()
-    return state
-
-def make_transport():
-    transport = np.zeros((N*N, N*N), dtype=np.float32) 
-    for i in range(N*N):
-        transport[i][i] = 1 - 4*D*dt/(d*d)
-        # right 
-        transport[i][(i-1)%(N*N)] = D*dt/(d*d) - Ux*dt/(2*d)
-        # left 
-        transport[i][(i+1)%(N*N)] = D*dt/(d*d) + Ux*dt/(2*d)
-        # up
-        transport[i][(i+N)%(N*N)] = D*dt/(d*d) - Uy*dt/(2*d)
-        # down
-        transport[i][(i-N)%(N*N)] = D*dt/(d*d) + Uy*dt/(2*d)
-    return transport
- 
-
-def next_state(state, transport):
-    if chem == 'linear':
-        return np.matmul(transport, state) + R*state
-    elif chem == 'logistic':
-        return np.matmul(transport, state) + R*state*(1-state)
-    elif chem == 'rand-nl':
-        return np.matmul(transport, state) + a*state - b*state*state
-    
-     
-
 
 def main(arguments):
     parser = argparse.ArgumentParser(description='parameters')
@@ -55,8 +19,9 @@ def main(arguments):
     parser.add_argument('-chem', default='linear', help='linear, logistic')
     parser.add_argument('-a', type=float, default='0')
     parser.add_argument('-b', type=float, default='0')
+    parser.add_argument('-initial', default='gaussian', help='gaussian, random')
     args = parser.parse_args()
-    global N, D, Ux, Uy, R, radius, dt, d, nsteps, chem, a, b
+    global N, D, Ux, Uy, R, radius, dt, d, nsteps, chem, a, b, initial
     N = args.N
     D = args.D
     Ux = args.Ux
@@ -68,6 +33,7 @@ def main(arguments):
     nsteps = args.nsteps
     chem = args.chem
     a, b = args.a, args.b
+    initial = args.initial
     if chem == 'rand-nl':
         a = np.random.uniform(-a, a, (N*N)).astype(np.float32)
 
@@ -112,6 +78,48 @@ def main(arguments):
     print("radius: " + str(radius))
     print("h: " + str(dt))
     print("d: " + str(d))
+    print("a: " + str(a))
+    print("b: " + str(b))
+
+
+# initial circle
+def make_initial():
+    L = np.linspace(-1.0, 1.0, N)
+    (x, y) = np.meshgrid(L, L)
+    if initial == 'gaussian':
+        state = np.exp(np.array(-x ** 2 - y**2)/(radius * radius)).astype(np.float32).flatten()
+    if initial == 'random':
+        state = np.random.uniform(0.0, 0.01, (N*N)).astype(np.float32) 
+    if initial == 'circle':
+        state = np.array((x ** 2 + y ** 2) <= radius * radius, dtype=np.float32).flatten()
+        #state=state * np.array((x ** 2 + y ** 2) <= radius * radius, dtype=np.float32).flatten()
+    #state = state.flatten()
+    return state
+
+def make_transport():
+    transport = np.zeros((N*N, N*N), dtype=np.float32) 
+    for i in range(N*N):
+        transport[i][i] = 1 - 4*D*dt/(d*d)
+        # right 
+        transport[i][(i-1)%(N*N)] = D*dt/(d*d) - Ux*dt/(2*d)
+        # left 
+        transport[i][(i+1)%(N*N)] = D*dt/(d*d) + Ux*dt/(2*d)
+        # up
+        transport[i][(i+N)%(N*N)] = D*dt/(d*d) - Uy*dt/(2*d)
+        # down
+        transport[i][(i-N)%(N*N)] = D*dt/(d*d) + Uy*dt/(2*d)
+    return transport
+ 
+
+def next_state(state, transport):
+    if chem == 'linear':
+        return np.matmul(transport, state) + R*state
+    elif chem == 'logistic':
+        return np.matmul(transport, state) + R*state*(1-state)
+    elif chem == 'rand-nl':
+        return np.matmul(transport, state) + a*state - b*state*state
+    
+     
 
     
 vertex_shader = """

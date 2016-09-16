@@ -9,7 +9,7 @@ def main(arguments):
     args = parser.parse_args()
     filename = args.filename
     values = load_data(filename) 
-    c = Canvas(values)
+    c = Canvas(values, filename)
     app.run()
    
 
@@ -24,8 +24,11 @@ def load_data(filename):
 
 vertex_shader = '''
 attribute vec2 position;
+uniform float scale;
 void main(void) {
-    gl_Position = vec4(position, 0.0, 1.0);
+    vec2 scaled_position = position;
+    scaled_position.y = position.y*scale; 
+    gl_Position = vec4(scaled_position, 0.0, 1.0);
 }
 '''
 
@@ -36,13 +39,15 @@ void main(void) {
 '''
 
 class Canvas(app.Canvas):
-    def __init__(self, val):
-        app.Canvas.__init__(self, size=(800, 800), keys='interactive')
+    def __init__(self, val, filename):
+        app.Canvas.__init__(self, size=(800, 800), keys='interactive', title=filename)
         self.program = gloo.Program(vertex_shader, fragment_shader)
         gloo.set_viewport(0, 0, self.physical_size[0], self.physical_size[1])
         N = val.size
         x = np.linspace(-1.0, +1.0, N).astype(np.float32)
         self.pos = np.c_[x, val].astype(np.float32)
+        self.maximum = np.amax(np.absolute(val))
+        
         #print(self.pos)
         self.show()
 
@@ -56,6 +61,8 @@ class Canvas(app.Canvas):
         gloo.set_viewport(0, 0, *self.physical_size)
 
         self.program['position'] = self.pos
+        self.program['scale'] = .75/self.maximum 
+        print("scale: " + str(.75/self.maximum))
         self.program.draw('line_strip')
 
 
