@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 OCT 2016 15:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 OCT 2016 14:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -27,73 +27,397 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 Package: enumerate 2014/10/28 v3.00 enumerate extensions (DPC)
 \@enLab=\toks14
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen103
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks16
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/wasysym/wasysym.sty
 Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
 \symwasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
 (Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count99
+\float@exts=\toks20
+\float@box=\box28
+\@float@everytoks=\toks21
+\@floatcapt=\box29
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count100
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/titling/titling.sty
+Package: titling 2009/09/04 v2.1d maketitle typesetting
+\thanksmarkwidth=\skip46
+\thanksmargin=\skip47
+\droptitle=\skip48
+)
 (./Carl_Denton_HW3.aux)
 \openout1 = `Carl_Denton_HW3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 7.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 7.
-LaTeX Font Info:    Try loading font information for U+wasy on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count101
+\scratchdimen=\dimen114
+\scratchbox=\box30
+\nofMPsegments=\count102
+\nofMParguments=\count103
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count104
+\MPscratchDim=\dimen115
+\MPnumerator=\count105
+\makeMPintoPDFobject=\count106
+\everyMPtoPDFconversion=\toks24
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for U+wasy on input line 11.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
-)
-
-LaTeX Warning: No \author given.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 29.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 29.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 29.
-[1
+) [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-[2]
+<burgers0.png, id=15, 578.16pt x 433.62pt>
+File: burgers0.png Graphic file (type png)
+ <use burgers0.png>
+Package pdftex.def Info: burgers0.png used on input line 47.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
 
-LaTeX Font Warning: Font shape `U/wasy/bx/n' in size <14.4> not available
-(Font)              Font shape `U/wasy/b/n' tried instead on input line 66.
+<burgers250.png, id=17, 578.16pt x 433.62pt>
+File: burgers250.png Graphic file (type png)
+ <use burgers250.png>
+Package pdftex.def Info: burgers250.png used on input line 47.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
 
-[3] (./Carl_Denton_HW3.aux) ) 
+<burgers500.png, id=18, 578.16pt x 433.62pt>
+File: burgers500.png Graphic file (type png)
+ <use burgers500.png>
+Package pdftex.def Info: burgers500.png used on input line 47.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+<burgers2-0.png, id=19, 578.16pt x 433.62pt>
+File: burgers2-0.png Graphic file (type png)
+ <use burgers2-0.png>
+Package pdftex.def Info: burgers2-0.png used on input line 51.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+<burgers2-2500.png, id=20, 578.16pt x 433.62pt>
+File: burgers2-2500.png Graphic file (type png)
+ <use burgers2-2500.png>
+Package pdftex.def Info: burgers2-2500.png used on input line 51.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+<burgers2-5000.png, id=21, 578.16pt x 433.62pt>
+File: burgers2-5000.png Graphic file (type png)
+ <use burgers2-5000.png>
+Package pdftex.def Info: burgers2-5000.png used on input line 51.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+[2 <./burgers0.png> <./burgers250.png> <./burgers500.png> <./burgers2-0.png> <.
+/burgers2-2500.png> <./burgers2-5000.png>]
+<burgers-convergence.png, id=32, 578.16pt x 433.62pt>
+File: burgers-convergence.png Graphic file (type png)
+
+<use burgers-convergence.png>
+Package pdftex.def Info: burgers-convergence.png used on input line 60.
+(pdftex.def)             Requested size: 292.5pt x 219.37006pt.
+ <space-order.png, id=33, 578.16pt x 433.62pt>
+File: space-order.png Graphic file (type png)
+
+<use space-order.png>
+Package pdftex.def Info: space-order.png used on input line 70.
+(pdftex.def)             Requested size: 191.10214pt x 143.32661pt.
+ <time-order.png, id=34, 578.16pt x 433.62pt>
+File: time-order.png Graphic file (type png)
+
+<use time-order.png>
+Package pdftex.def Info: time-order.png used on input line 70.
+(pdftex.def)             Requested size: 191.10214pt x 143.32661pt.
+ [3 <./burgers-convergence.png>]
+<kpz-0.png, id=39, 578.16pt x 433.62pt>
+File: kpz-0.png Graphic file (type png)
+ <use kpz-0.png>
+Package pdftex.def Info: kpz-0.png used on input line 82.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+<kpz-500.png, id=40, 578.16pt x 433.62pt>
+File: kpz-500.png Graphic file (type png)
+ <use kpz-500.png>
+Package pdftex.def Info: kpz-500.png used on input line 82.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+<kpz-1000.png, id=41, 578.16pt x 433.62pt>
+File: kpz-1000.png Graphic file (type png)
+ <use kpz-1000.png>
+Package pdftex.def Info: kpz-1000.png used on input line 82.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+<kpz2-0.png, id=42, 578.16pt x 433.62pt>
+File: kpz2-0.png Graphic file (type png)
+ <use kpz2-0.png>
+Package pdftex.def Info: kpz2-0.png used on input line 88.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+<kpz2-500.png, id=43, 578.16pt x 433.62pt>
+File: kpz2-500.png Graphic file (type png)
+ <use kpz2-500.png>
+Package pdftex.def Info: kpz2-500.png used on input line 88.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+<kpz2-1000.png, id=44, 578.16pt x 433.62pt>
+File: kpz2-1000.png Graphic file (type png)
+ <use kpz2-1000.png>
+Package pdftex.def Info: kpz2-1000.png used on input line 88.
+(pdftex.def)             Requested size: 124.80286pt x 93.597pt.
+
+<kpz3-0.png, id=45, 578.16pt x 433.62pt>
+File: kpz3-0.png Graphic file (type png)
+ <use kpz3-0.png>
+Package pdftex.def Info: kpz3-0.png used on input line 94.
+(pdftex.def)             Requested size: 191.10214pt x 143.32661pt.
+
+<kpz3-25.png, id=46, 578.16pt x 433.62pt>
+File: kpz3-25.png Graphic file (type png)
+ <use kpz3-25.png>
+Package pdftex.def Info: kpz3-25.png used on input line 94.
+(pdftex.def)             Requested size: 191.10214pt x 143.32661pt.
+
+<kpz3-50.png, id=47, 578.16pt x 433.62pt>
+File: kpz3-50.png Graphic file (type png)
+ <use kpz3-50.png>
+Package pdftex.def Info: kpz3-50.png used on input line 95.
+(pdftex.def)             Requested size: 191.10214pt x 143.32661pt.
+
+<kpz3-500.png, id=48, 578.16pt x 433.62pt>
+File: kpz3-500.png Graphic file (type png)
+ <use kpz3-500.png>
+Package pdftex.def Info: kpz3-500.png used on input line 95.
+(pdftex.def)             Requested size: 191.10214pt x 143.32661pt.
+ [4 <./space-order.png> <./time-order.png> <./kpz-0.png> <./kpz-500.png> <./kpz
+-1000.png> <./kpz2-0.png> <./kpz2-500.png> <./kpz2-1000.png>]
+<kpz2D-0.png, id=61, 578.16pt x 433.62pt>
+File: kpz2D-0.png Graphic file (type png)
+ <use kpz2D-0.png>
+Package pdftex.def Info: kpz2D-0.png used on input line 104.
+(pdftex.def)             Requested size: 155.99762pt x 116.99295pt.
+
+<kpz2D-10.png, id=62, 578.16pt x 433.62pt>
+File: kpz2D-10.png Graphic file (type png)
+ <use kpz2D-10.png>
+Package pdftex.def Info: kpz2D-10.png used on input line 104.
+(pdftex.def)             Requested size: 155.99762pt x 116.99295pt.
+
+<kpz2D-20.png, id=63, 578.16pt x 433.62pt>
+File: kpz2D-20.png Graphic file (type png)
+ <use kpz2D-20.png>
+Package pdftex.def Info: kpz2D-20.png used on input line 109.
+(pdftex.def)             Requested size: 155.99762pt x 116.99295pt.
+
+<kpz2D-500.png, id=64, 578.16pt x 433.62pt>
+File: kpz2D-500.png Graphic file (type png)
+ <use kpz2D-500.png>
+Package pdftex.def Info: kpz2D-500.png used on input line 109.
+(pdftex.def)             Requested size: 155.99762pt x 116.99295pt.
+ [5 <./kpz3-0.png> <./kpz3-25.png> <./kpz3-50.png> <./kpz3-500.png> <./kpz2D-0.
+png> <./kpz2D-10.png>] <kpz2D-2-0.png, id=74, 578.16pt x 433.62pt>
+File: kpz2D-2-0.png Graphic file (type png)
+ <use kpz2D-2-0.png>
+Package pdftex.def Info: kpz2D-2-0.png used on input line 116.
+(pdftex.def)             Requested size: 155.99762pt x 116.99295pt.
+
+<kpz2D-2-5.png, id=75, 578.16pt x 433.62pt>
+File: kpz2D-2-5.png Graphic file (type png)
+ <use kpz2D-2-5.png>
+Package pdftex.def Info: kpz2D-2-5.png used on input line 116.
+(pdftex.def)             Requested size: 155.99762pt x 116.99295pt.
+
+<kpz2D-2-10.png, id=76, 578.16pt x 433.62pt>
+File: kpz2D-2-10.png Graphic file (type png)
+ <use kpz2D-2-10.png>
+Package pdftex.def Info: kpz2D-2-10.png used on input line 117.
+(pdftex.def)             Requested size: 155.99762pt x 116.99295pt.
+
+<kpz2D-2-15.png, id=77, 578.16pt x 433.62pt>
+File: kpz2D-2-15.png Graphic file (type png)
+ <use kpz2D-2-15.png>
+Package pdftex.def Info: kpz2D-2-15.png used on input line 117.
+(pdftex.def)             Requested size: 155.99762pt x 116.99295pt.
+
+<kpz-scaling.png, id=78, 578.16pt x 433.62pt>
+File: kpz-scaling.png Graphic file (type png)
+ <use kpz-scaling.png>
+Package pdftex.def Info: kpz-scaling.png used on input line 131.
+(pdftex.def)             Requested size: 331.50238pt x 248.6216pt.
+ [6 <./kpz2D-20.png> <./kpz2D-500.png> <./kpz2D-2-0.png> <./kpz2D-2-5.png> <./k
+pz2D-2-10.png> <./kpz2D-2-15.png>] [7 <./kpz-scaling.png>] (./Carl_Denton_HW3.a
+ux) ) 
 Here is how much of TeX's memory you used:
- 444 strings out of 493089
- 4920 string characters out of 6134842
- 57650 words of memory out of 5000000
- 3989 multiletter control sequences out of 15000+600000
- 9996 words of font info for 37 fonts, out of 8000000 for 9000
+ 2554 strings out of 493089
+ 34649 string characters out of 6134842
+ 97620 words of memory out of 5000000
+ 5980 multiletter control sequences out of 15000+600000
+ 12002 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 22i,6n,20p,222b,193s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/w
-asy2-ps/wasy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/wasy2
--ps/wasyb10.pfb>
-Output written on Carl_Denton_HW3.pdf (3 pages, 58130 bytes).
+ 38i,12n,23p,354b,260s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Carl_Denton_HW3.pdf (7 pages, 867259 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+ 129 PDF objects out of 1000 (max. 8388607)
+ 52 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 141 words of extra memory for PDF output out of 10000 (max. 10000000)
 
